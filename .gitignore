@@ -1,1 +1,115 @@
+# ==========================
+# Python / FastAPI Backend
+# ==========================
 
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs & profiling
+*.log
+*.out
+*.err
+*.pid
+*.gz
+*.tmp
+*.bak
+
+# Unit test / coverage reports
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Pyre / mypy / Ruff / Black
+.pyre/
+.mypy_cache/
+.ruff_cache/
+.black/
+
+# Jupyter & notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Environment & settings
+.env
+.env.*
+.envrc
+*.local
+*.toml.local
+*.json.local
+
+# Models & data
+data/raw/
+data/interim/
+data/tmp/
+data/cache/
+data/models/*.onnx
+data/models/*.h5
+data/models/*.pt
+data/models/*.bin
+data/models/*.pkl
+!data/models/README.md  # keep readme if you make one
+
+# SentenceTransformers / HF cache
+cache/
+.huggingface/
+transformers_cache/
+sentence_transformers/
+~/.cache/
+~/.local/share/
+
+# IDEs & editors
+.vscode/
+.idea/
+.spyproject/
+.DS_Store
+Thumbs.db
+
+# Docker & compose
+*.pid
+*.tar
+*.bak
+docker-compose.override.yml
+.Dockerfile.swp
+
+# Reports / artifacts
+reports/
+artifacts/
+logs/
+runs/
+wandb/
+mlruns/
+tensorboard/
+lightning_logs/
