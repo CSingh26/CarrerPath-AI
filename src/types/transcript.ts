@@ -16,8 +16,7 @@ export interface TranscriptData {
 }
 
 export interface ProcessingState {
-  stage: 'reading' | 'extracting' | 'looking-up' | 'analyzing-skills' | 'matching
--domains' | 'generating-recommendations' | 'complete';
+  stage: 'reading' | 'extracting' | 'looking-up' | 'analyzing-skills' | 'matching-domains' | 'generating-recommendations' | 'complete';
   progress: number;
   message: string;
 }
