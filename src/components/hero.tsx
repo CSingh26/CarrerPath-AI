@@ -2,6 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   const containerVariants = {
@@ -51,9 +52,9 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
           variants={itemVariants}
         >
-          <button className="btn btn-primary text-lg px-8 py-3">
+          <Link href="#upload" className="btn btn-primary text-lg px-8 py-3 inline-block">
             Start Analysis
-          </button>
+          </Link>
           <button className="btn btn-secondary text-lg px-8 py-3">
             Learn More
           </button>

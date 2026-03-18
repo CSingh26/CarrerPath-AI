@@ -84,6 +84,7 @@ export default function TranscriptUpload({ onUploadStart }: UploadProps) {
 
   return (
     <motion.section
+      id="upload"
       className="py-16 px-4 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
