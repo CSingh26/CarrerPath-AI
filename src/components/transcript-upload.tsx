@@ -57,7 +57,6 @@ export default function TranscriptUpload({ onUploadStart }: UploadProps) {
     onUploadStart?.();
     setIsLoading(true);
 
-    // TODO: Implement transcript extraction API call
     const formData = new FormData();
     formData.append("file", file);
 
@@ -68,18 +67,26 @@ export default function TranscriptUpload({ onUploadStart }: UploadProps) {
       });
 
       if (!response.ok) {
-        throw new Error("Upload failed");
+        const error = await response.json();
+        throw new Error(error.error || "Upload failed");
       }
 
       const data = await response.json();
       console.log("Transcript extracted:", data);
-      // TODO: Handle response and redirect to review screen
+      // Store in session and redirect
+      sessionStorage.setItem("transcriptData", JSON.stringify(data));
+      window.location.href = "/analyze";
     } catch (error) {
       console.error("Error uploading transcript:", error);
-      alert("Failed to process transcript. Please try again.");
+      alert(`Failed to process transcript: ${error instanceof Error ? error.message : 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleInputClick = () => {
+    const input = document.getElementById("file-input") as HTMLInputElement;
+    if (input) input.click();
   };
 
   return (
@@ -111,7 +118,7 @@ export default function TranscriptUpload({ onUploadStart }: UploadProps) {
             disabled={isLoading}
           />
 
-          <label htmlFor="file-input" className="cursor-pointer">
+          <div className="cursor-pointer" onClick={handleInputClick}>
             <div className="mb-4">
               <svg
                 className="mx-auto h-12 w-12 text-slate-400"
@@ -147,7 +154,7 @@ export default function TranscriptUpload({ onUploadStart }: UploadProps) {
             <p className="mt-4 text-xs text-slate-400">
               Maximum file size: 10MB
             </p>
-          </label>
+          </div>
         </div>
       </div>
     </motion.section>

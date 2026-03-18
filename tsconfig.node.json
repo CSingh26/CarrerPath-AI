@@ -1,7 +1,5 @@
-import type { Config } from "typescript";
-
-const config: Config = {
-  compilerOptions": {
+{
+  "compilerOptions": {
     "composite": true,
     "skipLibCheck": true,
     "target": "ES2020",
@@ -9,13 +7,7 @@ const config: Config = {
     "lib": ["ES2020"],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "allowImportingTsExtensions": true
   },
-  "include": ["vite.config.ts"]
-};
-
-export default config;
+  "include": ["next.config.js"]
+}
